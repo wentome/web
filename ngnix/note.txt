@@ -1,0 +1,5 @@
+解压nginx 
+./configure
+make 
+make install
+
