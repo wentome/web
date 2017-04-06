@@ -10,7 +10,7 @@ fi
 
 cd $PACK_PATH
 
-./configure --enanle-fpm  --with-mysql
+./configure --enable-fpm  --with-mysql
 
 
 
