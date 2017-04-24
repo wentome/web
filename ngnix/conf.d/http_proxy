@@ -1,0 +1,33 @@
+http {
+    include mime.types;
+#    sendfile on;
+#    keepalive_timeout 65;
+    server {
+	listen 80;
+	server_name localhost;
+
+	location / {
+	    proxy_pass http://www.baidu.com;
+	}
+
+	location /images/ {
+	    root data;
+	}
+	
+#	location ~ \.php$ {
+#	    root html2;
+#	    fastcgi_index index.php;	    
+#	    fastcgi_pass    localhost:9000;
+#	    fastcgi_param    SCRIPT_FILENAME    /usr/local/nginx/html2$fastcgi_script_name;
+#	    include    fastcgi_params;
+#	}
+    }
+    server {
+	listen 8080;
+	#root data/up1;
+
+	location / {
+	    root data/up1;
+	}	
+    }
+}
